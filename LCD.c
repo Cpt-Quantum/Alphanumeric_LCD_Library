@@ -10,12 +10,12 @@
 #include "LCD.h"
 
 //Define constants to choose which pins to use for each signal on the LCD
-#define RS LATAbits.LATA5    //Register select pin
-#define EN LATAbits.LATA4    //Enable pin
-#define D4 LATAbits.LATA0    
-#define D5 LATAbits.LATA1
-#define D6 LATAbits.LATA2
-#define D7 LATAbits.LATA3
+#define D4 LATBbits.LATB5    
+#define D5 LATBbits.LATB4
+#define D6 LATBbits.LATB3
+#define D7 LATBbits.LATB2
+#define RS LATBbits.LATB1    //Register select pin
+#define EN LATBbits.LATB0    //Enable pin
 
 //Define oscillator frequency for delay function use
 #define _XTAL_FREQ 1000000

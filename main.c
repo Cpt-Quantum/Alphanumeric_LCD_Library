@@ -81,7 +81,7 @@
 //Define oscillator frequency for delay function use
 #define _XTAL_FREQ 1000000
 
-#define Program_Good LATEbits.LATE0 //Signal to show the PIC has programmed
+#define Program_Good LATDbits.LATD7 //Signal to show the PIC has programmed
 
 void main(void) {
     //Turn off comparitors
@@ -89,19 +89,18 @@ void main(void) {
     CM2CON0 = 0x07;
 
     //Turn off analogue functions to appropriate pins
-    ANSELA = 0x00;
-    ANSELE = 0x00;
+    ANSELD = 0x00;
     
     //Setup appropriate pins as outputs
-    TRISA= 0x00;
-    TRISE0 = 0;
+    TRISB = 0x00;
+    TRISD7 = 0;
     
     //Set the program check low
     Program_Good = 0;
         
     //Initialise LCD
     LCD_Initialise(1,0,1,1);
-    
+      
     //Move to start position
     LCD_Cursor_Position(1,1);
     
